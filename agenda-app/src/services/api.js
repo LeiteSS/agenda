@@ -15,6 +15,15 @@ function getNews(subject) {
     });
 }
 
+function getNewsById(subject, id) {
+  return fetch(`${URL}/${subject}/${id}`, params)
+    .then((response) => response.json())
+    .catch((err) => {
+      console.error('Ocorreu um err', err)
+    })
+}
+
 export default {
-  getNews
+  getNews,
+  getNewsById
 }

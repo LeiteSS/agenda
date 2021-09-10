@@ -16,7 +16,7 @@ function World({ values }) {
   );
 
   const openPost = (id) => {
-    history.push(`/technology/${id}`);
+    history.push(`/world/${id}`);
   }
 
   const renderPost = (post, index) => {
@@ -24,7 +24,7 @@ function World({ values }) {
     const isFirst = index === 0
     const spanValue = isFirst ? 24 : 12
     return (
-      <Col span={spanValue}  key={`World-${index}`}>
+      <Col span={spanValue}  key={`world-${index}`}>
         <article onClick={() => openPost(id)}>
           <p>
             <strong dangerouslySetInnerHTML={createMarkup(title)} />

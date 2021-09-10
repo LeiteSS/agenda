@@ -1,0 +1,13 @@
+# Requisições feitas usando a extensão para VSCode chamada Rest Client
+
+# all the news
+GET http://localhost:3000/api/
+
+# all technology's news
+#GET http://localhost:3000/api/technology
+
+# all economy's news
+#GET http://localhost:3000/api/economy
+
+# all world's news
+#GET http://localhost:3000/api/world

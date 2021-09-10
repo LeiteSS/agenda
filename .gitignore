@@ -1,0 +1,23 @@
+# dependencies
+agenda-app/node_modules
+agenda-api/node_modules
+agenda-app/.pnp
+agenda-app/.pnp.js
+
+# testing
+agenda-app/coverage
+
+# production
+agenda-app/build
+agenda-api/build
+
+# misc
+agenda-app/.DS_Store
+agenda-app/.env.local
+agenda-app/.env.development.local
+agenda-app/.env.test.local
+agenda-app/.env.production.local
+
+agenda-app/npm-debug.log*
+agenda-app/yarn-debug.log*
+agenda-app/yarn-error.log*

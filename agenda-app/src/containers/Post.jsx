@@ -4,7 +4,7 @@ import { useHistory, useParams, Link } from 'react-router-dom';
 import { Row, Col } from 'antd';
 
 import Api from '../services/api';
-//import Actions from './components/Actions'
+import Actions from './components/Actions'
 import { createMarkup } from '../utils/createMarkup';
 import './style.css';
  
@@ -16,7 +16,7 @@ function Post() {
   const [loading, setLoading] = useState(false);
   const history = useHistory();
 
-  const renderImg = ({ image, description }) => <img src={image.url} alt={description} width="75" />
+  const renderImg = ({ image, description }) => <img src={image.url} alt={description} width="75%" />
 
   const handleNews = useCallback((data) => {
     setNews(data[0]?.value)
@@ -62,14 +62,21 @@ function Post() {
 
   return (
     <div>
+      <Link to="/">Back</Link>
+      <Actions post={post} subject={subject} />
       <Row gutter={[16, 16]}>
         <Col span={24} md={16}>
-          <p>datePublished</p>
+          <p>{datePublished}</p>
           <h1 dangerouslySetInnerHTML={createMarkup(title)} />
           {image && renderImg({ image, description })}
           <p className="text" dangerouslySetInnerHTML={createMarkup(description)} />
           <hr />
-          <p className="text" dangerouslySetInnerHTML={createMarkup(body)} />
+          <p className="text" dangerouslySetInnerHTML={createMarkup(description)} />
+        </Col>
+        <Col span={24} md={8}>
+          <Row gutter={[16, 16]}>
+            {news?.value?.map(renderPost)}
+          </Row>
         </Col>
       </Row>
     </div>

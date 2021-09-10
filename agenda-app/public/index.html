@@ -16,5 +16,18 @@
   <body>
     <noscript>You need to enable JavaScript to run this app.</noscript>
     <div id="root"></div>
+    <script>
+      if ('serviceWorker' in navigator) {
+        window.addEventListener('load', function() {
+          navigator.serviceWorker.register('/worker.js', { useCache: true }).then(function(registration) {
+            console.log("Success to register", registration.scope)
+          }, function(err) {
+            console.log("Service Worker fail!");
+          }).catch(function(err) {
+            console.log(err);
+          })
+        })
+      }
+    </script>
   </body>
 </html>
